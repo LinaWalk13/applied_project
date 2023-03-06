@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: pink;
+    background-color: lightblue;
     color: #333;
     margin: 50px;
     padding: 0;
@@ -64,7 +64,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-    color: rgb(159, 23, 44);
+    color: rgb(0, 88, 139);
   }
   
   a:hover {
