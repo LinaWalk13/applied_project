@@ -1,9 +1,18 @@
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: lightblue;
     color: #333;
     margin: 50px;
     padding: 0;
+  }
+
+  scroll-container {
+    width: 350px;
+    height: 200px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   
   h1 {
@@ -19,11 +28,12 @@ body {
     margin: 50px;
   }
 
- p2 {
+  p2 {
     font-size: 24px;
     line-height: 1.5;
     margin: 50px;
-    text-decoration: underline;
+    font-weight: bold;
+    display:flex;
   }
 
   
