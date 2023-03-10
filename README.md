@@ -1,5 +1,5 @@
 ---
-permalink: /index.html
+permalink:  /New File/index.html
 ---
 # applied_project
 Applied cognitive science project: How can presentations/slides be more interesting and engaging?
