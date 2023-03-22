@@ -1,6 +1,22 @@
 
 
-body {
+
+  body {
+    background: lightgreen;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .upper {
+    height: 50%;
+    background: lightblue;
+  }
+  .lower {
+    height: 50%;
+    background: rgb(2, 72, 95);
+  }
+
+  body {
     font-family: Arial, sans-serif;
     background-color: lightblue;
     color: #333;
@@ -38,6 +54,8 @@ body {
 
   
   nav {
+    display: flex;
+    justify-content: center;
     background-color: #f2f2f2;
     padding: 20px;
     position: fixed;
@@ -80,3 +98,5 @@ body {
   a:hover {
     color: #ff9900;
   }
+
+  
