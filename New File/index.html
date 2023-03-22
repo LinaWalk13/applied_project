@@ -14,14 +14,14 @@
     </header>
     
     <div class="panel about-us-panel">
-      <div class="panel-content">
+      <div class="panel-text">
         <h2>About Us</h2>
         <p>We are two girls studying Cognitive Science at Aarhus University.</p>
       </div>
     </div>
     
     <div class="panel research-panel">
-      <div class="panel-content">
+      <div class="panel-text">
         <h2>Research</h2>
         <p>We have conducted a small study. Here you can find the results.</p>
       </div>
@@ -45,9 +45,9 @@ function closePanel(event) {
   panel.classList.remove('open');
 }
 
-aboutUsLink.addEventListener('click', openPanel);
-researchLink.addEventListener('click', openPanel);
-panel.addEventListener('click', closePanel);
+aboutUsLink.addEventListener('mouseover', openPanel);
+researchLink.addEventListener('mouseover', openPanel);
+panel.addEventListener('mouseleave', closePanel);
 </script>
 
 
