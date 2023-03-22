@@ -31,23 +31,33 @@
 
     
 <script>
-      const aboutUsLink = document.querySelector('.about-us-link');
+const aboutUsLink = document.querySelector('.about-us-link');
 const researchLink = document.querySelector('.research-link');
-const panel = document.querySelector('.panel');
+const aboutUsPanel = document.querySelector('.about-us-panel');
+const researchPanel = document.querySelector('.research-panel');
 
-function openPanel(event) {
+function openAboutUsPanel(event) {
   event.preventDefault();
-  panel.classList.add('open');
+  aboutUsPanel.classList.add('open');
 }
 
-function closePanel(event) {
+function openResearchPanel(event) {
   event.preventDefault();
-  panel.classList.remove('open');
+  researchPanel.classList.add('open');
 }
 
-aboutUsLink.addEventListener('mouseover', openPanel);
-researchLink.addEventListener('mouseover', openPanel);
-panel.addEventListener('mouseleave', closePanel);
+function closePanels(event) {
+  aboutUsPanel.classList.remove('open');
+  researchPanel.classList.remove('open');
+}
+
+aboutUsLink.addEventListener('mouseover', openAboutUsPanel);
+researchLink.addEventListener('mouseover', openResearchPanel);
+aboutUsPanel.addEventListener('mouseleave', closePanels);
+researchPanel.addEventListener('mouseleave', closePanels);
+
+
+
 </script>
 
 
