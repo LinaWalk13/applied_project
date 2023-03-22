@@ -6,13 +6,51 @@
     <link rel="stylesheet" href="./style.css">
     
   
-  <header>
-    <div class="header-text">
-      <a href="#">About Us</a>
-      <a href="#">Research</a>
+    <header>
+      <div class="header-text">
+        <a href="#" class="about-us-link">About Us</a>
+        <a href="#" class="research-link">Research</a>
+      </div>
+    </header>
+    
+    <div class="panel about-us-panel">
+      <div class="panel-content">
+        <h2>About Us</h2>
+        <p>We are two girls studying Cognitive Science at Aarhus University.</p>
+      </div>
     </div>
-  </header>
-  
+    
+    <div class="panel research-panel">
+      <div class="panel-content">
+        <h2>Research</h2>
+        <p>We have conducted a small study. Here you can find the results.</p>
+      </div>
+    </div>
+    
+    
+
+    
+<script>
+      const aboutUsLink = document.querySelector('.about-us-link');
+const researchLink = document.querySelector('.research-link');
+const panel = document.querySelector('.panel');
+
+function openPanel(event) {
+  event.preventDefault();
+  panel.classList.add('open');
+}
+
+function closePanel(event) {
+  event.preventDefault();
+  panel.classList.remove('open');
+}
+
+aboutUsLink.addEventListener('click', openPanel);
+researchLink.addEventListener('click', openPanel);
+panel.addEventListener('click', closePanel);
+</script>
+
+
 
   <body>
     <div class="upper"></div>
@@ -22,16 +60,16 @@
     
     <ul>
       <li>
-        <img src="/Users/lina/Documents/Semester 2/Applied CogSci/website/icon1.png" alt="icon1">
+        <img src="/Users/lina/Downloads/icon1.png" alt="icon1">
         <a href="text.html">Minimize amount of text</a></li>
       <li>
-        <img src="/Users/lina/Documents/Semester 2/Applied CogSci/website/icon2.png" alt="icon1">
+        <img src="/Users/lina/Downloads/icon2.png" alt="icon1">
         <a href="visuals.html">Use visuals</a></li>
       <li>
-        <img src="/Users/lina/Documents/Semester 2/Applied CogSci/website/icon3.png" alt="icon1">
+        <img src="/Users/lina/Downloads/icon3.png" alt="icon1">
         <a href="clarity.html">Create clarity</a></li>
       <li>
-        <img src="/Users/lina/Documents/Semester 2/Applied CogSci/website/icon4.png" alt="icon1">
+        <img src="/Users/lina/Downloads/icon4.png" alt="icon1">
         <a href="takeaway.html">Present take-away</a></li>
     </ul>
  
