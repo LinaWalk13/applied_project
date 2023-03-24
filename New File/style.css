@@ -86,6 +86,7 @@
   li img {
     display: block;
     margin: 0 auto;
+    margin-top: 70px;
     width: 120px; 
     z-index: -5;
   }
@@ -108,7 +109,7 @@
   
   a {
     color: #333;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
@@ -154,6 +155,7 @@
     z-index: 1;
   }
   
+
   .panel.open {
     right: 0; /* slide in from the right */
     z-index: 1000;
@@ -168,5 +170,29 @@
     color: #ffffff;
   }
   
+  footer {
+    background-color: rgb(0, 88, 139);
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    margin-top: 400px;
+  }
+  
+  .footer-text {
+    display: flex;
+  }
+  
+  .footer-text p {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  
+  .footer-text p:hover {
+    color: #ffe644;
+  }
   
   
