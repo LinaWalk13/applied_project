@@ -1,0 +1,84 @@
+---
+title: 'Applied: survey data'
+author: "Lina Walkowiak, Lelia Corfitsen"
+date: "2023-03-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load("tidyverse", "dplyr", "car")
+rm()
+```
+
+
+```{r}
+df <- read.csv("//Users/lina/Documents/data_24_03.csv")
+
+df <- df[,- c(1, 2, 4, 5, 6, 15, 16)]
+
+df <- rename(df, id = REF, r_perception = EN01_01, r_expertise = EN01_02, r_mental = EN01_03, r_attention = EN01_04, memory=EN02_01, age = IN02, gender = IN03, cogsci = IN05, p1 = SD01_01, e1 = SD02_01, m1 = SD03_01, a1 = SD04_01, p0 = SE01_01, e0 = SE02_01, m0 = SE03_01, a0 = SE04_01, p2 =SI01_01, e2 =SI02_01, m2 = SI03_01, a2= SI04_01, p3 =SL01_01, e3 = SL02_01, m3= SL03_01, a3 = SL04_01)
+
+```
+
+
+
+
+```{r}
+
+df_new0 <-  mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T))
+df_new0 <- df_new0[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new0$slides <- '0'
+df_new0 <- rename(df_new0, rating = avg0)
+
+
+df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
+df_new1 <- df_new1[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new1$slides <- '1'
+df_new1 <- rename(df_new1,rating = avg1)
+
+df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
+df_new2 <- df_new2[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new2$slides <- '2'
+df_new2 <- rename(df_new2, rating = avg2)
+
+df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
+df_new3 <- df_new3[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new3$slides <- '3'
+df_new3 <- rename(df_new3,rating = avg3)
+```
+
+
+```{r}
+data <- rbind(df_new0, df_new1, df_new2, df_new3)
+```
+
+```{r}
+# create a color palette
+my_colors <- c("#92c5de", "#4393c3", "#2166ac", "#053061")
+
+# plot the data using ggplot
+ggplot(data, aes(x = factor(slides), y = rating)) +
+  geom_boxplot(fill = my_colors, color = "black", alpha = 0.5, outlier.shape = NA, ) +
+  scale_fill_manual(values = my_colors) +
+  labs(x = "Number of violated elements", y = "Rating", title = "Ratings of presented slides") +
+  theme_bw() +
+  theme(plot.title = element_text(size = 20, face = "bold"),
+        axis.title = element_text(size = 10, face = "italic"),
+        axis.text = element_text(size = 14),
+        legend.position = "none")
+```
+```{r}
+model1 <-  lm(rating~slides, data = data)
+summary(model1)
+```
+```{r}
+
+plot(model1)
+
+qqPlot(data$rating)
+
+shapiro.test(model1$residuals) # assess normality of the residuals of the whole model 
+
+```
+
