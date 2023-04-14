@@ -4,7 +4,7 @@
 
 body {
   font-family: "Poppins";
-  background: linear-gradient(to right, orange, red);
+  background: linear-gradient(to right, red, orange);
   color: #333;
   margin: 50px;
   padding: 0;
@@ -23,7 +23,7 @@ body {
     font-size: 60px;
     text-align: center;
     margin-top: 100px;
-    color: #3c5740;
+    color: #334914;
   }
   
   p {
@@ -91,6 +91,7 @@ body {
   li a {
     display: block;
     margin-top: 30px; 
+    
   }
   
   li:before {
@@ -109,7 +110,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-    color: #3c5740;
+    color: #39493b;
   }
   
   a:hover {
@@ -132,8 +133,25 @@ body {
     height: 50px;
   }
   
+  header {
+    color: #39493b;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .research-shape,
+  .about-us-shape {
+    background-color: #39493b;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
   .header-text {
     display: flex;
+    margin-left: auto;
   }
   
   .header-text a {
@@ -147,42 +165,11 @@ body {
     color: #ffe644;
   }
   
-  .panel {
-    position: fixed;
-    top: 0;
-    right: -695px; /* initially hidden */
-    width: 695px;
-    height: 100%;
-    background-color: orange;
-    transition: right 0.3s ease-in-out;
-    z-index: 1;
-  }
   
 
-  .panel.open {
-    right: 0; /* slide in from the right */
-    z-index: 1000;
-  }
-  
-  .panel-content {
-    padding: 20px;
-  }
-  .panel-text {
-    font-size: 10px;
-    line-height: 1.5;
-    color: #ffffff;
-    text-align: center;
-  }
-  .panel-text p{
-    font-size: 15px;
-    line-height: 1.5;
-    color: #ffffff;
-    text-align: left;
-    margin: auto;
-  }
   
   footer {
-    color: #3c5740;
+    color: #39493b;
     display: flex;
     justify-content: flex-end;
     align-items: center;

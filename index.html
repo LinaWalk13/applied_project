@@ -9,64 +9,17 @@
   
     <header>
       <div class="header-text">
-        <a href="#" class="research-link">Experimental results</a>
-        <a href="#" class="about-us-link">About Us</a>
-       
+        <div class="research-shape">
+          <a href="research.html" class="research-link">Experimental results</a>
+        </div>
+        <div class="about-us-shape">
+          <a href="aboutus.html" class="about-us-link">About Us</a>
+        </div>
       </div>
     </header>
-
-    <div class="panel research-panel">
-      <div class="panel-text">
-        <h2>Experimental results</h2>
-        <p>We have conducted a small study. Here you can find the results.</p>
-        <img src="./images/graph1.png">
-      </div>
-    </div>
     
-    <div class="panel about-us-panel">
-      <div class="panel-text">
-        <h2>About Us</h2>
-        <p>We are two girls studying Cognitive Science at Aarhus University.</p>
-      </div>
-    </div>
     
-
     
-
-
-    
-<script>
-const aboutUsLink = document.querySelector('.about-us-link');
-const researchLink = document.querySelector('.research-link');
-const aboutUsPanel = document.querySelector('.about-us-panel');
-const researchPanel = document.querySelector('.research-panel');
-
-function openAboutUsPanel(event) {
-  event.preventDefault();
-  aboutUsPanel.classList.add('open');
-}
-
-function openResearchPanel(event) {
-  event.preventDefault();
-  researchPanel.classList.add('open');
-}
-
-function closePanels(event) {
-  aboutUsPanel.classList.remove('open');
-  researchPanel.classList.remove('open');
-}
-
-aboutUsLink.addEventListener('mouseover', openAboutUsPanel);
-researchLink.addEventListener('mouseover', openResearchPanel);
-aboutUsPanel.addEventListener('mouseleave', closePanels);
-researchPanel.addEventListener('mouseleave', closePanels);
-
-
-
-</script>
-
-
-
   <body>
     <div class="upper"></div>
     <div class="lower"></div>
