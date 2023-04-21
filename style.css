@@ -41,12 +41,12 @@ body {
   }
   .two{
     font-size: 26px;
-    line-height: 1.5;
+    line-height: 2;
     margin: 50px;
+    margin-bottom: 100px;
     color: black;
     width: 80%;
     text-align:left;
-    margin: 50px;
     margin-left: 190px;
     width: 70%;
   }
@@ -64,6 +64,23 @@ body {
     text-align: left;
     margin: 50px;
     margin-top: 20px;
+    margin-left: 190px;
+    width: 70%;
+  }
+  
+  .four{
+    background-color: rgb(255, 255, 255,0.2);
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 5px;
+    font-size: 26px;
+    line-height: 4;
+    margin: 50px;
+    color: black;
+    width: 80%;
+    text-align: auto;
+    margin: 50px;
+    margin-top: 200px;
     margin-left: 190px;
     width: 70%;
   }
