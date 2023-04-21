@@ -115,10 +115,7 @@ body {
 
 
   ul {
-    list-style: none;
-    margin: 0;
     margin-bottom: 100px;
-    padding: 0;
     text-align: center;
   }
   
@@ -240,6 +237,10 @@ body {
   
   .footer-text p:hover {
     color: #ffe644;
+  }
+
+  .footer-sub {
+
   }
 
   
