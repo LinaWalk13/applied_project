@@ -5,9 +5,12 @@ body {
   font-family: "Poppins";
   background: linear-gradient(to right, red, orange);
   color: #333;
-  margin: 50px;
   padding: 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
   scroll-container {
     width: 350px;
@@ -31,7 +34,6 @@ body {
     width: 80%;
     text-align: center;
     margin: 50px;
-    margin-left: 190px;
     margin-top: 0px;
     margin-bottom: 20px;
     width: 70%;
@@ -45,7 +47,6 @@ body {
     color: black;
     width: 80%;
     text-align:left;
-    margin-left: 190px;
     width: 70%;
   }
 
@@ -62,7 +63,6 @@ body {
     text-align: left;
     margin: 50px;
     margin-top: 20px;
-    margin-left: 190px;
     width: 70%;
   }
   
@@ -79,7 +79,6 @@ body {
     text-align: auto;
     margin: 50px;
     margin-top: 200px;
-    margin-left: 190px;
     width: 70%;
   }
   .five {
@@ -89,7 +88,6 @@ body {
     color: black;
     width: 80%;
     text-align:left;
-    margin-left: 190px;
     }
 
   nav {
@@ -106,7 +104,6 @@ body {
   h2 {
     font-size: 32px;
     margin-top: 50px;
-    margin-left: 190px;
     color: #334914;
   }
 
@@ -115,7 +112,6 @@ body {
     font-size: 26px;
     margin-top: 40px;
     margin-bottom: 20px;
-    margin-left: 190px;
   }
 
 
@@ -145,7 +141,6 @@ body {
     margin: 50px;
     color: black;
     text-align: left;
-    margin-left: 190px;
     width: 70%;
   }
 
@@ -177,64 +172,103 @@ body {
     justify-content: flex-end;
     align-items: center;
     height: 50px;
-  }
-  
-  
-  .research-shape,
-  .about-us-shape {
-    background-color: #39493b;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  .header-text {
-    display: flex;
-    margin-left: auto;
-  }
-  
-  .header-text a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
-  }
-  
-  .header-text a:hover {
-    color: #ffe644;
-  }
-  
-  
+    }
 
-  
-  footer {
-    color: #39493b;
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+  .container {
+    max-width: 2200px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    height: 50px;
-    margin-top: 200px;
-  }
-  
-  .footer-text {
-    display: flex;
-  }
-  
-  .footer-text p {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
-  }
-  
-  .footer-text p:hover {
-    color: #ffe644;
-  }
+    }
 
-  .footer-sub {
+    .row {
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
 
-  }
+    ul {
+    list-style: none;
+    }
 
-  
+    .footer {
+    padding:70px 0;
+    }
+
+    .footer-col{
+        width: 26%;
+        padding: 0 15px;
+    }
+    .footer-col h3{
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        position: relative;
+        font-weight: 500;
+    }
+    .footer-col h3::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: rgb(232, 126, 34);
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+    }
+
+    .footer-col a{
+        text-align: left;
+        padding-left: 30px;
+        font-size: 16px;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: 300;
+        color: #334914;
+        transition: all 0.3s ease;
+        hyphens: auto;
+    }
+
+    .footer-col a:hover {
+        color: #ffffff;
+        padding-left: 40px;
+    }
+
+
+    /*.footer-col ul li:not(:last-child){
+        margin: bottom 10px;
+    }
+
+    .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        transition: all 0.3s ease;
+        hyphens: auto;
+    }
+
+    .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 10px;
+    }*/
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+
   
   
