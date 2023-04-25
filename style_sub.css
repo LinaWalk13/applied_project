@@ -13,11 +13,15 @@ body {
   color: #333;
   padding: 0;
   height: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
+main {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   scroll-container {
     width: 350px;
     height: 200px;
@@ -158,6 +162,21 @@ body {
     color: black;
   }
 
+  .link {
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 2;
+    color: black;
+    width: 80%;
+    text-align: left;
+    margin-top: 20px;
+    width: 70%;
+    text-decoration: underline;
+  }
+  .link:hover {
+    color: #ffffff;
+}
+
   img {
     background-color: rgb(255, 255, 255,0.2);
     padding: 30px;
@@ -272,10 +291,11 @@ body {
 
     header {
         color: #4A051C;
-        display: inline;
-        justify-content: left;
-        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: left;
         height: 50px;
+        margin: 20px;
         }
           
           .home-shape {
@@ -286,8 +306,7 @@ body {
           }
           
           .header-text {
-            display: flex;
-            margin-right: auto;
+            display: inline;
           }
           
           .header-text a {

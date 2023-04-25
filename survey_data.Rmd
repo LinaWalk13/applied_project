@@ -59,7 +59,7 @@ my_colors <- c("#FE3103", "#FE6907", "#FF9304", "#FFCD38")
 
 # plot the data using ggplot
 ggplot(data, aes(x = factor(slides), y = rating)) +
-  geom_boxplot(fill = my_colors, color = "black", alpha = 0.8, outlier.shape = NA, ) +
+  geom_boxplot(fill = my_colors, color = "black", alpha = 0.7, outlier.shape = NA, ) +
   scale_fill_manual(values = my_colors) +
   labs(x = "Number of violated elements", y = "Rating", title = "Ratings of presented slides") +
   theme_bw() +

@@ -17,8 +17,28 @@
     </header>
     <div class="upper"></div>
     <div class="lower"></div>
+    <main>
     
     <h1>Experimental results</h1>
+    <p class="three"> 
+      To test the effectiveness of the approach of cognitive slides, we have designed and conducted a small scale study on other students studying Cognitive Science at Aarhus University. <br>
+      In our study, participants were presented with four sets of slides, each differing in the level of adherence to the principles of cognitive psychology included on our website.<br>
+      Participants were exposed to four slides, one violating three principles, one violating two principles, one violating one principle and one slide that was in alignment with all of the principles. <br>
+      The slides all dealt with subtopics from the first-semester course Introduction to Cognitive Science but were random in the combination of content and number of violations as was the order of the slides shown. Participants were then asked to rate the level of engagement and interest they experienced by being exposed to the slide.<br> 
+    <strong style="text-shadow: 0 0 1px #000;">After collecting data from 31 participants, we reached the following results:</strong>  <br>
+       </p>
+       <img src="./images/data_boxplot.png" alt="Data: Boxplot">
+
+       <p class="three">
+        It is clearly visible that the slides with more adherence to our principles have reached a higher rating compared to those with more violated elements. <br>
+        We built a linear regression model with the Number of violated elements as the predictor variable and the ratings as the outcome variable. The model had the following structure:  <em>lm(rating~slides, data = data)</em>. <br>
+        The baseline of the categorical predictor variable was zero violated elements and included 4 levels in accordance to the number of violated elements. The outcome variable was coded as the ratings on a scale from one to seven. <br>
+        A significance relationship between violated elements was found for the intercept, two violated elements and three violated elements. We did not find a significance for the level of one element violated.  
+ 
+       </p>
+
+       <p class="three"> A csv of the collected data can be downloaded <a class= "link" href="./images/cognitive_slides_data.csv">here</a>. To view the response variable coding, a desription of the columns and the content is included further down in the csv file. </p>
+      </main>
 
     <footer class="footer">
       <div class ="container">
