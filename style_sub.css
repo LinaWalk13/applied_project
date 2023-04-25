@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins";
   background: linear-gradient(to right, red, orange);
@@ -23,7 +29,7 @@ body {
     font-size: 60px;
     text-align: center;
     margin-top: 100px;
-    color: #334914;
+    color: #4A051C;
   }
   
   p {
@@ -93,7 +99,7 @@ body {
   nav {
     display: flex;
     justify-content: center;
-    background-color: #39493b;
+    background-color: #4A051C;
     padding: 20px;
     position: fixed;
     top: 0;
@@ -104,7 +110,7 @@ body {
   h2 {
     font-size: 32px;
     margin-top: 50px;
-    color: #334914;
+    color: #4A051C;
   }
 
   h3 {
@@ -166,18 +172,34 @@ body {
     margin-right: auto;
   }
 
-  header {
-    color: #3c5740;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 50px;
-    }
 
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+  .img-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+  
+  /* CSS for the img-wrapper class */
+  .img-wrapper {
+    display: flex;;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    gap: 0px;
+  }
+  
+  .img-wrapper h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  /* CSS for the img class */
+  .img {
+    width: 60%;
+    margin: 0;
     }
 
   .container {
@@ -233,7 +255,7 @@ body {
         text-transform: capitalize;
         text-decoration: none;
         font-weight: 300;
-        color: #334914;
+        color: #4A051C;
         transition: all 0.3s ease;
         hyphens: auto;
     }
@@ -243,32 +265,42 @@ body {
         padding-left: 40px;
     }
 
-
-    /*.footer-col ul li:not(:last-child){
-        margin: bottom 10px;
-    }
-
-    .footer-col ul li a {
-        font-size: 16px;
-        text-transform: capitalize;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 300;
-        color: #bbbbbb;
-        transition: all 0.3s ease;
-        hyphens: auto;
-    }
-
-    .footer-col ul li a:hover{
-        color: #ffffff;
-        padding-left: 10px;
-    }*/
-
     .row{
         display: flex;
         flex-wrap: wrap;
         }
 
-
+    header {
+        color: #4A051C;
+        display: inline;
+        justify-content: left;
+        align-items: center;
+        height: 50px;
+        }
+          
+          .home-shape {
+            background-color: #4A051C;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+          }
+          
+          .header-text {
+            display: flex;
+            margin-right: auto;
+          }
+          
+          .header-text a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+          }
+          
+          .header-text a:hover {
+            color:  #f64348;
+          }
+          
+          
+    
   
   
