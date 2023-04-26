@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 pacman::p_load("tidyverse", "dplyr", "car")
 rm()
+
 ```
 
 
@@ -54,6 +55,11 @@ data <- rbind(df_new0, df_new1, df_new2, df_new3)
 ```
 
 ```{r}
+write.csv(data, "//Users/lina/documents/cognitive_slides_data.csv", row.names=FALSE)
+```
+
+
+```{r}
 # create a color palette
 my_colors <- c("#FE3103", "#FE6907", "#FF9304", "#FFCD38")
 
@@ -69,9 +75,15 @@ ggplot(data, aes(x = factor(slides), y = rating)) +
         legend.position = "none")
 ```
 ```{r}
+data$id <- as.numeric(data$id)
 model1 <-  lm(rating~slides, data = data)
+model3 <-  lm(rating~slides +(1|id), data = data)
+#model2 <-  stan_glm(rating~slides, data = data)
 summary(model1)
+#summary(model2)
+summary(model3)
 ```
+
 ```{r}
 
 plot(model1)
