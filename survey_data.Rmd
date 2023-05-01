@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-pacman::p_load("tidyverse", "dplyr", "car")
+pacman::p_load("tidyverse", "dplyr", "car", "lme4")
 rm()
 
 ```
@@ -58,6 +58,12 @@ data <- rbind(df_new0, df_new1, df_new2, df_new3)
 write.csv(data, "//Users/lina/documents/cognitive_slides_data.csv", row.names=FALSE)
 ```
 
+```{r}
+
+
+
+```
+
 
 ```{r}
 # create a color palette
@@ -77,20 +83,33 @@ ggplot(data, aes(x = factor(slides), y = rating)) +
 ```{r}
 data$id <- as.numeric(data$id)
 model1 <-  lm(rating~slides, data = data)
-model3 <-  lm(rating~slides +(1|id), data = data)
-#model2 <-  stan_glm(rating~slides, data = data)
 summary(model1)
-#summary(model2)
-summary(model3)
+
 ```
 
 ```{r}
+plot(model1, which = 1)
 
-plot(model1)
+ggplot(data.frame(residuals = resid(model1)), aes(x = residuals)) + 
+  geom_histogram() +
+  ggtitle("Histogram of Residuals")
 
-qqPlot(data$rating)
+qqnorm(resid(model1), main = "Normal Q-Q Plot of Residuals")
+qqline(resid(model1))
 
-shapiro.test(model1$residuals) # assess normality of the residuals of the whole model 
+influenceIndexPlot(model1)
+
 
 ```
+
+
+
+```{r}
+mean(df$age)
+range(df$age)
+nrow(df[df$gender == '1', ]) # 1 = female 
+nrow(df[df$gender == '2', ]) # 2 = male
+nrow(df[df$gender == '3', ])
+```
+
 
