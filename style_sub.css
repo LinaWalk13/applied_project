@@ -296,6 +296,8 @@ main {
     .row{
         display: inline-flex;
         flex-wrap: nowrap;
+        float: inline-start;
+        position: static;
         }
 
     header {
