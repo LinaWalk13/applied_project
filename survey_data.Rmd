@@ -14,7 +14,7 @@ rm()
 
 
 ```{r}
-df <- read.csv("//Users/lina/Documents/final_data.csv")
+df <- read.csv("//Users/lina/Documents/data_may.csv")
 
 df <- df[,- c(1, 2, 4, 5, 6, 15, 16)]
 
@@ -22,31 +22,71 @@ df <- rename(df, id = REF, r_perception = EN01_01, r_expertise = EN01_02, r_ment
 
 ```
 
+```{r}
 
+
+```
+
+
+```{r}
+df_new_p <- df %>%
+  mutate_at(vars(matches('^p[0-3]+$')), as.numeric) %>%
+  mutate(avg_p = rowMeans(select(., matches('^p[0-3]+$')), na.rm = TRUE))
+df_new_p$topic <- 'perception'
+df_new_p <- select(df_new_p,  topic)
+
+
+df_new_e <- df %>%
+  mutate_at(vars(matches('^e[0-3]+$')), as.numeric) %>%
+  mutate(avg_e = rowMeans(select(., matches('^e[0-3]+$')), na.rm = TRUE))
+df_new_e$topic <- 'expertise'
+df_new_e <- select(df_new_e,  topic)
+
+df_new_m <- df %>%
+  mutate_at(vars(matches('^m[0-3]+$')), as.numeric) %>%
+  mutate(avg_m = rowMeans(select(., matches('^m[0-3]+$')), na.rm = TRUE))
+df_new_m$topic <- 'mental'
+df_new_m <- select(df_new_m, topic)
+
+df_new_a <- df %>%
+  mutate_at(vars(matches('^a[0-3]+$')), as.numeric) %>%
+  mutate(avg_a = rowMeans(select(., matches('^a[0-3]+$')), na.rm = TRUE))
+df_new_a$topic <- 'attention'
+df_new_a <- select(df_new_a,  topic)
+
+df_interest <- cbind(df_new_p, df_new_e, df_new_m, df_new_a)
+
+```
 
 
 ```{r}
 
 df_new0 <-  mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T))
-df_new0 <- df_new0[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
+df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
+df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
+
+df_new0 <- df_new0[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
 df_new0$slides <- '0'
 df_new0 <- rename(df_new0, rating = avg0)
+df_new0 <- cbind(df_new0, df_interest)
 
 
-df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
-df_new1 <- df_new1[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new1 <- df_new1[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
 df_new1$slides <- '1'
 df_new1 <- rename(df_new1,rating = avg1)
+df_new1 <- cbind(df_new1, df_interest)
 
-df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
-df_new2 <- df_new2[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+
+df_new2 <- df_new2[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
 df_new2$slides <- '2'
 df_new2 <- rename(df_new2, rating = avg2)
+df_new2 <- cbind(df_new2, df_interest)
 
-df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
-df_new3 <- df_new3[, c(1, 2, 4, 5, 6, 7,8,9,26)]
+df_new3 <- df_new3[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
 df_new3$slides <- '3'
 df_new3 <- rename(df_new3,rating = avg3)
+df_new3 <- cbind(df_new3, df_interest)
 ```
 
 
@@ -58,11 +98,7 @@ data <- rbind(df_new0, df_new1, df_new2, df_new3)
 write.csv(data, "//Users/lina/documents/cognitive_slides_data.csv", row.names=FALSE)
 ```
 
-```{r}
 
-
-
-```
 
 
 ```{r}
@@ -88,16 +124,16 @@ summary(model1)
 ```
 
 ```{r}
-plot(model1, which = 1)
+#plot(model1, which = 1)
 
 ggplot(data.frame(residuals = resid(model1)), aes(x = residuals)) + 
   geom_histogram() +
   ggtitle("Histogram of Residuals")
 
-qqnorm(resid(model1), main = "Normal Q-Q Plot of Residuals")
-qqline(resid(model1))
+#qqnorm(resid(model1), main = "Normal Q-Q Plot of Residuals")
+#qqline(resid(model1))
 
-influenceIndexPlot(model1)
+#influenceIndexPlot(model1)
 
 
 ```
