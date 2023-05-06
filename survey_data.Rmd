@@ -24,7 +24,39 @@ df <- rename(df, id = REF, r_perception = EN01_01, r_expertise = EN01_02, r_ment
 
 ```{r}
 
+df_new0 <-  mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T))
+df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
+df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
+df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
 
+df_all <- mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T), avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T),  avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T), avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
+
+
+df_all <- df_all %>%
+  mutate_at(vars(matches('^p[0-3]+$')), as.numeric) %>%
+  mutate(avg_p = rowMeans(select(., matches('^p[0-3]+$')), na.rm = TRUE), avg_e = rowMeans(select(., matches('^e[0-3]+$')), na.rm = TRUE), avg_m = rowMeans(select(., matches('^m[0-3]+$')), na.rm = TRUE), avg_a = rowMeans(select(., matches('^a[0-3]+$')), na.rm = TRUE))
+
+df_new0 <- df_new0[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
+df_new0$slides <- '0'
+df_new0 <- rename(df_new0, rating = avg0)
+df_new0 <- cbind(df_new0)
+
+
+df_new1 <- df_new1[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
+df_new1$slides <- '1'
+df_new1 <- rename(df_new1,rating = avg1)
+df_new1 <- cbind(df_new1)
+
+
+df_new2 <- df_new2[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
+df_new2$slides <- '2'
+df_new2 <- rename(df_new2, rating = avg2)
+df_new2 <- cbind(df_new2)
+
+df_new3 <- df_new3[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
+df_new3$slides <- '3'
+df_new3 <- rename(df_new3,rating = avg3)
+df_new3 <- cbind(df_new3)
 ```
 
 
