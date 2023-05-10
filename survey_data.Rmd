@@ -20,21 +20,25 @@ df <- df[,- c(1, 2, 4, 5, 6, 15, 16)]
 
 df <- rename(df, id = REF, r_perception = EN01_01, r_expertise = EN01_02, r_mental = EN01_03, r_attention = EN01_04, memory=EN02_01, age = IN02, gender = IN03, cogsci = IN05, p1 = SD01_01, e1 = SD02_01, m1 = SD03_01, a1 = SD04_01, p0 = SE01_01, e0 = SE02_01, m0 = SE03_01, a0 = SE04_01, p2 =SI01_01, e2 =SI02_01, m2 = SI03_01, a2= SI04_01, p3 =SL01_01, e3 = SL02_01, m3= SL03_01, a3 = SL04_01)
 
+
+
 ```
 
 ```{r}
+df <- df[,- c(26, 27, 28, 29, 30, 31, 32, 33)]
+```
+
+
+
+
+
+```{r}
+
 
 df_new0 <-  mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T))
 df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
 df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
 df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
-
-df_all <- mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T), avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T),  avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T), avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
-
-
-df_all <- df_all %>%
-  mutate_at(vars(matches('^p[0-3]+$')), as.numeric) %>%
-  mutate(avg_p = rowMeans(select(., matches('^p[0-3]+$')), na.rm = TRUE), avg_e = rowMeans(select(., matches('^e[0-3]+$')), na.rm = TRUE), avg_m = rowMeans(select(., matches('^m[0-3]+$')), na.rm = TRUE), avg_a = rowMeans(select(., matches('^a[0-3]+$')), na.rm = TRUE))
 
 df_new0 <- df_new0[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
 df_new0$slides <- '0'
@@ -60,66 +64,6 @@ df_new3 <- cbind(df_new3)
 ```
 
 
-```{r}
-df_new_p <- df %>%
-  mutate_at(vars(matches('^p[0-3]+$')), as.numeric) %>%
-  mutate(avg_p = rowMeans(select(., matches('^p[0-3]+$')), na.rm = TRUE))
-df_new_p$topic <- 'perception'
-df_new_p <- select(df_new_p,  topic)
-
-
-df_new_e <- df %>%
-  mutate_at(vars(matches('^e[0-3]+$')), as.numeric) %>%
-  mutate(avg_e = rowMeans(select(., matches('^e[0-3]+$')), na.rm = TRUE))
-df_new_e$topic <- 'expertise'
-df_new_e <- select(df_new_e,  topic)
-
-df_new_m <- df %>%
-  mutate_at(vars(matches('^m[0-3]+$')), as.numeric) %>%
-  mutate(avg_m = rowMeans(select(., matches('^m[0-3]+$')), na.rm = TRUE))
-df_new_m$topic <- 'mental'
-df_new_m <- select(df_new_m, topic)
-
-df_new_a <- df %>%
-  mutate_at(vars(matches('^a[0-3]+$')), as.numeric) %>%
-  mutate(avg_a = rowMeans(select(., matches('^a[0-3]+$')), na.rm = TRUE))
-df_new_a$topic <- 'attention'
-df_new_a <- select(df_new_a,  topic)
-
-df_interest <- cbind(df_new_p, df_new_e, df_new_m, df_new_a)
-
-```
-
-
-```{r}
-
-df_new0 <-  mutate(df, avg0 = select(df, matches('0')) %>% rowMeans(na.rm=T))
-df_new1 <-  mutate(df, avg1 = select(df, matches('1')) %>% rowMeans(na.rm=T))
-df_new2 <-  mutate(df, avg2 = select(df, matches('2')) %>% rowMeans(na.rm=T))
-df_new3 <-  mutate(df, avg3 = select(df, matches('3')) %>% rowMeans(na.rm=T))
-
-df_new0 <- df_new0[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
-df_new0$slides <- '0'
-df_new0 <- rename(df_new0, rating = avg0)
-df_new0 <- cbind(df_new0, df_interest)
-
-
-df_new1 <- df_new1[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
-df_new1$slides <- '1'
-df_new1 <- rename(df_new1,rating = avg1)
-df_new1 <- cbind(df_new1, df_interest)
-
-
-df_new2 <- df_new2[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
-df_new2$slides <- '2'
-df_new2 <- rename(df_new2, rating = avg2)
-df_new2 <- cbind(df_new2, df_interest)
-
-df_new3 <- df_new3[, c(1, 2,3, 4, 5, 6, 7,8,9,34)]
-df_new3$slides <- '3'
-df_new3 <- rename(df_new3,rating = avg3)
-df_new3 <- cbind(df_new3, df_interest)
-```
 
 
 ```{r}
@@ -143,12 +87,13 @@ ggplot(data, aes(x = factor(slides), y = rating)) +
   scale_fill_manual(values = my_colors) +
   labs(x = "Number of violated elements", y = "Rating", title = "Ratings of presented slides") +
   theme_bw() +
-  theme(plot.title = element_text(size = 20, face = "bold"),
+  theme(plot.title = element_text(size = 14, face = "bold"),
         axis.title = element_text(size = 10, face = "italic"),
         axis.text = element_text(size = 14),
         legend.position = "none")
 ```
 ```{r}
+
 data$id <- as.numeric(data$id)
 model1 <-  lm(rating~slides, data = data)
 summary(model1)
@@ -156,16 +101,44 @@ summary(model1)
 ```
 
 ```{r}
-#plot(model1, which = 1)
+# Load necessary packages
 
-ggplot(data.frame(residuals = resid(model1)), aes(x = residuals)) + 
-  geom_histogram() +
-  ggtitle("Histogram of Residuals")
+# Load required packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+pacman::p_load(magick, jtools)
 
-#qqnorm(resid(model1), main = "Normal Q-Q Plot of Residuals")
-#qqline(resid(model1))
+# Create a linear model
+model <- lm(rating ~ slides, data = data)
 
-#influenceIndexPlot(model1)
+# Extract the coefficients from the model
+coefficients <- summary(model)$coefficients[,1:2]
+
+# Create a data frame with the coefficients
+coefficients_df <- data.frame(
+  Coefficients = rownames(coefficients),
+  Estimate = coefficients[,1],
+  Std.Error = coefficients[,2]
+)
+
+# Format the table using kableExtra
+coefficients_table <- kable(coefficients_df, "html", align = "c") %>%
+  kable_styling(full_width = F, position = "center", 
+                bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                font_size = 16)
+
+# Export the table as a picture
+save_kable(coefficients_table,file = "coefficients_table.png")
+
+
+summ(model1)
+```
+
+
+
+```{r}
+
 
 
 ```
@@ -180,4 +153,47 @@ nrow(df[df$gender == '2', ]) # 2 = male
 nrow(df[df$gender == '3', ])
 ```
 
+```{r}
+# Create a data frame with four columns
+df <- data.frame(
+  Coefficients = c("Intercept", "slides1", "slides2", "slides3"),
+  Estimate = c(4.5758, -0.5455, -1.2424, -2.3333),
+  Std.Error = c(0.2178, 0.3081, 0.3081, 0.3081),
+  Pr = c("< 2e-16", "0.079", "9.40e-05", "6.33e-12")
+)
+
+# Add a row for the column names
+#df <- rbind(c("", "Estimate", "Std. Error", "p-value"), df)
+
+#table <- kable(df, align = "c") %>% kable_styling() %>% as_image(file = "table.png") 
+
+```
+
+
+```{r}
+# create new columns to store word and number in combination column
+data$combo_word <- NA
+data$combo_num <- NA
+
+# loop over each row in the dataset
+for (i in 1:nrow(data)) {
+  # create a vector of column names for combination columns
+  colname <- paste0(c(0:3), c("_i", "_a", "_e", "_m"))
+  
+  # find the index of the column with a value of 1
+  combo_col <- which(data[i, colname] == 1)
+  
+  # if a column is found with a value of 1, extract the word and number
+  if (length(combo_col) > 0) {
+    combo_name <- colname[combo_col]
+    combo_num <- gsub("_.*", "", combo_name)
+    combo_word <- gsub(".*_", "", combo_name)
+    combo_word <- substr(combo_word, 1, 1) # extract first letter of word
+    
+    # store word and number in new columns
+    data[i, "combo_word"] <- combo_word
+    data[i, "combo_num"] <- combo_num
+  }
+}
+```
 
