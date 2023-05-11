@@ -25,7 +25,7 @@ df <- rename(df, id = REF, r_perception = EN01_01, r_expertise = EN01_02, r_ment
 ```
 
 ```{r}
-df <- df[,- c(26, 27, 28, 29, 30, 31, 32, 33)]
+#df <- df[,- c(26, 27, 28, 29, 30, 31, 32, 33)]
 ```
 
 
@@ -68,6 +68,8 @@ df_new3 <- cbind(df_new3)
 
 ```{r}
 data <- rbind(df_new0, df_new1, df_new2, df_new3)
+data$slides <- as.numeric(data$slides)
+cor.test(data$rating, data$slides)
 ```
 
 ```{r}
@@ -92,6 +94,7 @@ ggplot(data, aes(x = factor(slides), y = rating)) +
         axis.text = element_text(size = 14),
         legend.position = "none")
 ```
+
 ```{r}
 
 data$id <- as.numeric(data$id)
@@ -104,45 +107,23 @@ summary(model1)
 # Load necessary packages
 
 # Load required packages
+install.packages("sjPlot")
+library(sjPlot)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-pacman::p_load(magick, jtools)
+pacman::p_load(magick, jtools, lme4, sjmisc, magick)
 
 # Create a linear model
-model <- lm(rating ~ slides, data = data)
+model <- lmer(rating ~ slides+ (1|id), data = data)
+summary(model)
 
-# Extract the coefficients from the model
-coefficients <- summary(model)$coefficients[,1:2]
+summary_table <- tab_model(model)
 
-# Create a data frame with the coefficients
-coefficients_df <- data.frame(
-  Coefficients = rownames(coefficients),
-  Estimate = coefficients[,1],
-  Std.Error = coefficients[,2]
-)
-
-# Format the table using kableExtra
-coefficients_table <- kable(coefficients_df, "html", align = "c") %>%
-  kable_styling(full_width = F, position = "center", 
-                bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                font_size = 16)
-
-# Export the table as a picture
-save_kable(coefficients_table,file = "coefficients_table.png")
-
-
-summ(model1)
-```
-
-
-
-```{r}
-
-
+# save as image
+export_image(summary_table, "summary_table.png")
 
 ```
-
 
 
 ```{r}
