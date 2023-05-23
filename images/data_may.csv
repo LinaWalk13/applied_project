@@ -1,0 +1,34 @@
+CASE,SERIAL,REF,QUESTNNR,MODE,STARTED,EN01_01,EN01_02,EN01_03,EN01_04,EN02_01,IN02,IN03,IN05,IN05_01,IN05_02,SD01_01,SD02_01,SD03_01,SD04_01,SE01_01,SE02_01,SE03_01,SE04_01,SI01_01,SI02_01,SI03_01,SI04_01,SL01_01,SL02_01,SL03_01,SL04_01,FINISHED,Q_VIEWER,LASTPAGE,MAXPAGE,MISSING,MISSREL,TIME_RSI,DEG_TIME
+86,CASE000085,85,qnr06,interview,22.03.23 09:38,6,4,6,7,Cognitive Maps ,20,1,1,2,1,,,,7,,,5,,,7,,,1,,,,1,0,9,9,0,0,,100
+90,CASE000089,89,qnr12,interview,22.03.23 09:44,4,5,4,5,The autonomous stage: a skill becomes automatic and rapid,22,1,1,2,1,,,,4,,5,,,,,2,,2,,,,1,0,9,9,0,0,,100
+92,CASE000091,91,qnr10,interview,22.03.23 09:48,3,5,3,5,something about maps,24,2,1,2,1,2,,,,,,3,,,3,,,,,,2,1,0,9,9,0,0,,100
+94,CASE000093,93,qnr15,interview,22.03.23 09:49,4,6,5,5,Skill acquisitions ,25,2,1,2,1,,6,,,,,,5,2,,,,,,2,,1,0,9,9,0,0,,100
+96,CASE000095,95,qnr13,interview,22.03.23 09:56,7,5,5,7,The content,20,1,1,2,1,3,,,,,,5,,,4,,,,,,1,1,0,9,9,0,0,,100
+104,CASE000103,103,qnr07,interview,22.03.23 10:21,5,3,3,6,How the last presentation was made like stairs,23,1,1,2,1,,,,4,,6,,,2,,,,,,3,,1,0,9,9,0,0,,100
+106,CASE000105,105,qnr12,interview,22.03.23 10:22,4,4,4,4,Fusiform face area,22,1,1,2,1,,,,3,,2,,,,,3,,2,,,,1,0,9,9,0,0,,100
+108,CASE000107,107,qnr03,interview,22.03.23 10:31,4,4,4,4,I remember some of The pictures and definitions,22,1,1,2,1,3,,,,,,3,,,,,4,,3,,,1,0,9,9,0,0,,100
+110,CASE000109,109,qnr13,interview,22.03.23 11:00,4,3,5,6,how hypercolumns are arranged,20,2,1,2,1,5,,,,,,5,,,3,,,,,,4,1,0,9,9,0,0,,100
+116,CASE000115,115,qnr05,interview,22.03.23 11:21,7,7,5,7,Cognitive maps,20,1,1,2,1,,,5,,,,,6,2,,,,,3,,,1,0,9,9,0,0,,100
+118,CASE000117,117,qnr15,interview,22.03.23 11:24,6,7,6,5,There are three stages of skill acquisition,19,1,1,2,1,,4,,,,,,2,4,,,,,,1,,1,0,9,9,0,0,,100
+122,CASE000121,121,qnr03,interview,22.03.23 11:31,5,4,5,4,Hypercolumns are exciting,21,2,1,2,1,4,,,,,,5,,,,,4,,3,,,1,0,9,9,0,0,,100
+124,CASE000123,123,qnr07,interview,22.03.23 11:31,5,3,4,6,Hypercolumns are 2x2 ,23,1,1,2,1,,,,2,,4,,,3,,,,,,2,,1,0,9,9,0,0,,100
+130,CASE000129,129,qnr07,interview,22.03.23 11:49,7,6,7,7,crossing of neural pathways - vision,22,1,1,2,1,,,,5,,6,,,2,,,,,,1,,1,0,9,9,0,0,,100
+134,CASE000133,133,qnr09,interview,22.03.23 12:39,7,6,4,6,stages of skill acquisition,21,1,1,2,1,,5,,,4,,,,,,,3,,,1,,1,0,9,9,0,0,,100
+136,CASE000135,135,qnr03,interview,22.03.23 12:44,6,6,5,5,Survey maps,20,1,1,2,1,4,,,,,,5,,,,,3,,2,,,1,0,9,9,0,0,,100
+138,CASE000137,137,qnr02,interview,22.03.23 13:15,6,7,3,6,Cognitive maps,21,2,1,2,1,5,,,,,5,,,,,4,,,,,3,1,0,9,9,0,0,,100
+142,CASE000141,141,qnr01,interview,22.03.23 14:14,7,7,7,7,Visual information ,27,1,1,1,2,,3,,,3,,,,,,2,,,,,2,1,0,9,9,0,0,,100
+144,CASE000143,143,qnr07,interview,22.03.23 14:55,3,4,6,5,Cognitive maps,20,1,1,2,1,,,,2,,5,,,3,,,,,,4,,1,0,9,9,0,0,,100
+148,CASE000147,147,qnr03,interview,22.03.23 15:46,6,4,5,6,Cognitive mappings are repr¾sentations of the environment in the brain,24,1,1,2,1,6,,,,,,5,,,,,5,,4,,,1,0,9,9,0,0,,100
+152,CASE000151,151,qnr03,interview,22.03.23 15:52,7,7,7,7,Hypercolumns,21,2,1,2,1,5,,,,,,7,,,,,4,,1,,,1,0,9,9,0,0,,100
+166,CASE000165,165,qnr03,interview,22.03.23 17:47,6,6,6,6,Hypercolumns picture  ,22,1,1,2,1,3,,,,,,3,,,,,3,,1,,,1,0,9,9,0,0,,100
+170,CASE000169,169,qnr06,interview,22.03.23 19:37,3,2,4,4,two different kinds of cognitive maps,22,2,1,2,1,,,,2,,,5,,,1,,,3,,,,1,0,9,9,0,0,,100
+174,CASE000173,173,qnr06,interview,22.03.23 21:25,6,5,6,6,Hypercolumns,25,1,1,2,1,,,,5,,,5,,,4,,,3,,,,1,0,9,9,0,0,,100
+176,CASE000175,175,qnr08,interview,22.03.23 21:40,7,6,6,7,autonomous stage,20,1,1,2,1,,5,,,5,,,,,,,6,,,1,,1,0,9,9,0,0,,100
+178,CASE000177,177,qnr13,interview,23.03.23 09:21,5,3,6,4,Survey map,23,3,1,2,1,4,,,,,,5,,,2,,,,,,2,1,0,9,9,0,0,,100
+186,CASE000185,185,qnr02,interview,23.03.23 12:06,6,4,4,6,Skill aquisition,22,1,1,2,1,4,,,,,3,,,,,2,,,,,4,1,0,9,9,0,0,,100
+190,CASE000189,189,qnr05,interview,23.03.23 20:16,6,6,6,6,Hypercolumn organization,24,2,1,2,1,,,5,,,,,4,6,,,,,5,,,1,0,9,9,0,0,,100
+194,CASE000193,193,qnr08,interview,24.03.23 15:56,5,5,4,6,2x2 hypercollumns,26,2,1,2,1,,2,,,4,,,,,,,4,,,1,,1,0,9,9,0,0,,100
+208,CASE000207,207,qnr07,interview,14.04.23 12:00,5,5,5,5,the girl playing soccer,21,1,1,2,1,,,,3,,6,,,2,,,,,,2,,1,0,9,9,0,0,,100
+226,CASE000225,225,qnr08,interview,14.04.23 15:10,6,4,3,5,That hypercolumns are related to vision,23,1,1,2,1,,3,,,6,,,,,,,4,,,1,,1,0,9,9,0,0,,100
+232,CASE000231,231,qnr11,interview,18.04.23 10:04,5,6,6,5,survey maps are locations in space where route maps are paths from a to b,22,1,1,2,1,,,5,,,,,5,3,,,,,3,,,1,0,9,9,0,0,,100
+238,CASE000237,237,qnr09,interview,26.04.23 21:07,3,4,5,7,That the associative stage is part of skill acquisition,23,1,1,2,1,,5,,,4,,,,,,,4,,,1,,1,0,9,9,0,0,,100

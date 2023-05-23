@@ -23,41 +23,53 @@
     <p class="three"> 
       To test the effectiveness of the approach of cognitive slides, we have designed and conducted a small scale study on other students studying Cognitive Science at Aarhus University. <br>
       In our study, participants were presented with four sets of slides, each differing in the level of adherence to the principles of cognitive psychology included on our website.<br>
-      Participants were exposed to four slides, one violating three principles, one violating two principles, one violating one principle and one slide that was in alignment with all of the principles. <br>
-      The slides all dealt with subtopics from the first-semester course Introduction to Cognitive Science but were random in the combination of content and number of violations as was the order of the slides shown. Participants were then asked to rate the level of engagement and interest they experienced by being exposed to the slide.<br> 
-    <strong style="text-shadow: 0 0 1px #000;">After collecting data from 31 participants, we reached the following results:</strong>  <br>
-       </p>
+      Participants were exposed to four slides, one violating three principles, one violating two principles, one violating one principle and one slide that was in alignment with all of the principles.
+      These are some example stimuli from the subtopics of expertise:  <br> 
+    </p>
+
+    <div class="img-container">
+      <div class="img-wrapper">
+        <h2>3 violated </h2> 
+        <img src="./images/e3.png" alt="Image 1" class="img">
+      </div>
+      <div class="img-wrapper">
+        <h2>2 violated</h2> 
+        <img src="./images/e2.png" alt="Image 2" class="img">
+      </div>
+    </div>
+        <div class="img-container">
+      <div class="img-wrapper">
+        <h2>1 violated</h2> 
+        <img src="./images/e1.png" alt="Image 1" class="img">
+      </div>
+      <div class="img-wrapper">
+        <h2>0 violated</h2> 
+        <img src="./images/e0.png" alt="Image 2" class="img">
+      </div>
+    </div>
+
+       <p class="three"> 
+        The presented slides were random in the combination of content and number of violations as was the order of the slides shown. Participants were then asked to rate the level of engagement and interest they experienced by being exposed to the slide.<br> 
+      <strong style="text-shadow: 0 0 1px #000;">After collecting data from 31 participants, we reached the following results:</strong>  <br>
+         </p>
+
        <img src="./images/data_boxplot.png" alt="Data: Boxplot">
 
        <p class="three">
         It is clearly visible that the slides with more adherence to our principles have reached a higher rating compared to those with more violated elements. <br>
-        We built a linear regression model with the Number of violated elements as the predictor variable and the ratings as the outcome variable. The model had the following structure:  <em>lm(rating~slides, data = data)</em>. <br>
-        The baseline of the categorical predictor variable was zero violated elements and included 4 levels in accordance to the number of violated elements. The outcome variable was coded as the ratings on a scale from one to seven. <br>
-        A significance relationship between violated elements was found for the intercept, two violated elements and three violated elements. We did not find a significance for the level of one element violated.  
- 
+        A Pearson's product-moment correlation was conducted to examine the relationship between participant ratings and the number of violated elements. The analysis showed a strong negative correlation between the ratings given to the slides and the overall rating of the presentation 
+(r = -0.57, p < 0.001, 95% CI [-0.68, -0.44]).
+This suggests that as the number of violated elements increases, the mean rating of perceived engagement decreases. 
+The following model was then used to estimate coefficients for the variable of the number of violated design elements and its impact on the rating of perceived engagement: <br>
+<em>lmer(rating ~ slides + (1|ID), data = data) </em> <br>
+The model includes the fixed effect of slides as well as random intercepts for ID to account for the assumption of independence, the outcome variable is the rating of engagement perceived by participants. The summary of the model is shown below. <br>
        </p>
-
-       <p class="three"> A csv of the collected data can be downloaded <a class= "link" href="./images/cognitive_slides_data.csv">here</a>. To view the response variable coding, a desription of the columns and the content is included further down in the csv file. </p>
+       <img src="./images/model_output.png" alt="Data: model output">
+       <p class="three"> A csv of the collected data can be downloaded <a class= "link" href="./images/data_may.csv">here</a>.</p>
+<h2> A small disussion of the results </h2>
+       <p class="three"> There are several potential explanations for the results we obtained in our study. 
+        One important factor to consider is the design of our experiment. We used three levels, with each of the three principles being tested in a fixed position of the number of violated slides. This design choice may have influenced the results, as participants may have become less sensitive to the differences in slides as more principles were adhered to.
+        Looking at the estimates of the slide levels, we can see that this is likely the case. The difference in mean ratings between slides was greatest between level 2 and level 3, and decreased continuously to the lowest difference between level 0 and 1.
+        Another factor to consider is the specific design principles that we tested and their effect on the general slide design. The principle of creating clarity did not require a spatial redistribution of elements on the slides, while the principles of minimizing text and including visuals did lead to a more noticeable difference in the overall structure of the slide. This may have contributed to the difference of the impact of these principles on the engagement and interest participants reported.
+        </p>
       </main>
-
-    <footer class="footer">
-      <div class ="container">
-        <div class="row">
-          
-          <div class="footer-col">
-            <h3>source 1</h3>
-              <a href= "https://doi.org/10.1518/hfes.46.3.567.1640"> Link. </a>
-          </div>
-          
-          <div class="footer-col">
-            <h3> source 2</h3>
- <a href= "https://doi.org/10.1037/0022-0663.94.1.156"> Link</a>
-          </div>
-          
-          <div class="footer-col">
-            <h3> source 3</h3> <a href= "#"> link.</a>
-          </div>
-      </div>
-</div>
-
-    </footer>
