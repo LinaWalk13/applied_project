@@ -212,8 +212,8 @@ main {
     display: flex;;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    gap: 10px;
+    width: 100%;
+    gap: 0px;
   }
   
   .img-wrapper h2 {
@@ -224,7 +224,7 @@ main {
   
   /* CSS for the img class */
   .img {
-    width: 85%;
+    width: 60%;
     margin: 0;
     }
 
