@@ -50,7 +50,8 @@
 
        <p class="three"> 
         The presented slides were random in the combination of content and number of violations as was the order of the slides shown. Participants were then asked to rate the level of engagement and interest they experienced by being exposed to the slide.<br> 
-      <strong style="text-shadow: 0 0 1px #000;">After collecting data from 31 participants, we reached the following results:</strong>  <br>
+        A csv of the collected data can be downloaded <a class= "link" href="./images/data_cog_slides.csv">here</a>. <br>
+      <strong style="text-shadow: 0 0 1px #000;"> The data from a total of 33 participants revealed the following results:</strong>  <br>
          </p>
 
        <img src="./images/data_boxplot.png" alt="Data: Boxplot">
@@ -62,10 +63,10 @@
 This suggests that as the number of violated elements increases, the mean rating of perceived engagement decreases. 
 The following model was then used to estimate coefficients for the variable of the number of violated design elements and its impact on the rating of perceived engagement: <br>
 <em>lmer(rating ~ slides + (1|ID), data = data) </em> <br>
-The model includes the fixed effect of slides as well as random intercepts for ID to account for the assumption of independence, the outcome variable is the rating of engagement perceived by participants. The summary of the model is shown below. <br>
+The model includes the fixed effect of slides as well as random intercepts for ID to account for the assumption of independence, the outcome variable is the rating of engagement perceived by participants. <br>
+The summary of the model is shown below. <br> 
        </p>
        <img src="./images/model_output.png" alt="Data: model output">
-       <p class="three"> A csv of the collected data can be downloaded <a class= "link" href="./images/data_cog_slides.csv">here</a>.</p>
 <h2> A disussion of the results </h2>
        <p class="three"> There are several potential explanations for the results we obtained in our study. 
         One important factor to consider is the design of our experiment. We used three levels, with each of the three principles being tested in a fixed position of the number of violated slides. This design choice may have influenced the results, as participants may have become less sensitive to the differences in slides as more principles were adhered to.
